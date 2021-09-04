@@ -2,9 +2,9 @@ body {
 	font: 15px/1.5 Arial, Helvetica, sans-serif;
 	padding: 0;
 	margin: 0;
-	color:#ffffff;
+	color:#181836;
 	/*background: url('./images/blue-abstract-waves-creative-blue-wavy-background-blue-backgrounds-abstract-waves.jpg');*/
-	background-color: #080808;
+	background-color: #181836;
 	backdrop-filter: blur(9px);
 }
 
@@ -40,7 +40,7 @@ a:active {
 }
 
 .scroll-left {
- height: 50px;	
+ height: 50px;
  overflow: hidden;
  position: relative;
 }
@@ -59,10 +59,10 @@ a:active {
 /* Move it (define the animation) */
 @keyframes scroll-left {
  0%   {
- transform: translateX(100%); 		
+ transform: translateX(100%);
  }
  100% {
- transform: translateX(-100%); 
+ transform: translateX(-100%);
  }
 }
 
@@ -88,7 +88,7 @@ li a:hover {
 }
 
 .active {
-  background-color: #4CAF50;
+  background-color: #181836;
 }
 
 .admin-editor
@@ -120,7 +120,7 @@ li a:hover {
 	color:#ffffff;
 	margin-top:10px;
 	margin-bottom:10px;
-	
+
 }
 
 header {
@@ -128,15 +128,15 @@ header {
 	background: #101010;
 	color:#ffffff;
 	min-height: 35px;
-	border-bottom: #2c2c2e 1px solid;
-	border-top: #2c2c2e 1px solid;
+	border-bottom: #181836 1px solid;
+	border-top: #181836 1px solid;
 }
 
 header li{
 	font-family:arial;
 	float:left;
 	display:inline;
-	
+
 }
 
 header #branding{
@@ -155,7 +155,7 @@ header nav{
 
 header .highlight, header .current a{
 	font-family:arial;
-	color:#2db5a7;
+	color:#181836;
 	font-weight:bold;
 }
 
@@ -182,7 +182,7 @@ h1{
 
 #showcase p{
 	font-size:20px;
-	
+
 }
 
 /*Newsletter*/
@@ -191,8 +191,8 @@ h1{
 	padding:15px;
 	color:#000000;
 	background:white;
-	
-	
+
+
 }
 
 #newsletter h1{
@@ -218,11 +218,11 @@ h1{
 	text-align: center;
 	width:30%;
 	padding:10px;
-	
+
 }
 #boxes .box img{
 	width:90px;
-	
+
 }
 
 /*sidebar*/
@@ -231,8 +231,8 @@ aside#sidebar{
 	float:right;
 	width:30%;
 	margin-top:10px;
-	
-	
+
+
 }
 
 /*main col*/
@@ -250,7 +250,7 @@ footer{
 	text-align:center;
 }
 
-	@font-face 
+	@font-face
 	{
 		font-family: courier-new;
 		src: url(courier-new.ttf);
@@ -270,15 +270,15 @@ footer{
 		font-family: gibson;
 		src: url(Gibson-Regular.ttf);
 	}
-	
-	.previews 
+
+	.previews
 	{
 		max-width: 10%;
 		border-radius:10px;
 		border-style:none;
 	}
 
-	#showcase 
+	#showcase
 	{
 		/*background: url('./images/8564eb79acff5518b7070afdb037fdcf.png');*/
 		min-height: 300px;
@@ -287,7 +287,7 @@ footer{
 		font-family:arial;
 	}
 
-	#content-interactable 
+	#content-interactable
 	{
 		border-style: solid;
 		border-width: 2px;
@@ -367,7 +367,7 @@ footer{
 		margin: auto;
 		width: 100%;
 	}
-	
+
 	#post-input-contents
 	{
 		font-family:arial;
@@ -406,7 +406,7 @@ footer{
 		text-align: center;
 		opacity:0;
 	}
-	
+
 	code
 	{
 		font-family:courier-new;
@@ -415,7 +415,7 @@ footer{
 		border-radius: 5px;
 		padding: 3px;
 	}
-	
+
         /*!
  * Bootstrap v4.0.0 (https://getbootstrap.com)
  * Copyright 2011-2018 The Bootstrap Authors
