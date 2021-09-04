@@ -1,1 +1,150 @@
-
+<html><head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+            #myWindow {
+                cursor: grab;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+            }
+    
+            #myContent img {
+                width: auto;
+                height: auto;
+            }
+            button:focus {outline:0;}
+    </style>
+    <meta charset="utf-8">
+    
+            <title>VOAA Vooperian Map</title>
+            <link rel="shortcut icon" type="image/jpg" href="./favicon.ico">
+    
+            <link rel="stylesheet" href="./style.css">
+    </head>
+        
+        <body data-new-gr-c-s-check-loaded="14.1027.0" data-gr-ext-installed="">
+            
+    
+            
+            <header>
+                    <div id="branding">
+                        <img src="./logo.png" style="float:left; height:60px; width:60px; padding-left:20px; padding-top:10px; padding-bottom:10px;">
+                        <p style="line-height:0pt; color:white; font-size:30px; font-family:arial; float:left; width:auto; padding-top:0px; padding-left:20px;"><span style="line-height:0pt; font-size:30px;">VOAA</span></p>
+                    </div>
+            </header>
+    
+    <section id="content-interactable">
+    <script> 
+    
+    function stateMap()
+    {
+    var img = document.getElementById("myimage");
+    img.src="https://github.com/achillium/vooperian-map/blob/main/detailed_vooperian_mapSCALED.jpg?raw=true";
+    var WeatherRegionMap = document.getElementById("WeatherRegionMap");
+    WeatherRegionMap.style.backgroundColor = "#000000";
+    var StateMap = document.getElementById("StateMap");
+    StateMap.style.backgroundColor = "#252525";
+    return false;
+    }
+    function weatherRegionMap()
+    {
+    var img = document.getElementById("myimage");
+    img.src="https://github.com/achillium/vooperian-map/blob/main/weather_region_mapSCALED.jpg?raw=true";
+    var WeatherRegionMap = document.getElementById("WeatherRegionMap");
+    WeatherRegionMap.style.backgroundColor = "#252525";
+    var StateMap = document.getElementById("StateMap");
+    StateMap.style.backgroundColor = "#000000";
+    return false;
+    }
+    </script>
+    
+    <div class="d-flex my-3">Move your mouse over the map and scroll to zoom in and out.</div>
+    <span>
+            <button id="StateMap" onclick="stateMap();" style="cursor:pointer; display:inline-block; background-color:#252525; color:white; border-radius:30px; border-style:solid;">States Map</button>
+            <button id="WeatherRegionMap" onclick="weatherRegionMap();" style="cursor:pointer; display:inline-block; background-color:#000000; color:white; border-radius:30px; border-style:solid;">Weather Regions</button>
+    </span>
+    <span><div class="container py-3">
+        <div class="row justify-content-center">
+            <div class="col-12">
+                <div class="embed-responsive embed-responsive-4by3 rounded bg-secondary">
+                    <div id="myWindow" class="embed-responsive-item" style="background-color:black;">
+                        <div id="myContent" style="transform: translate3d(0px, 0px, 0px) scale(0.186986);">
+                            <img id="myimage" src="https://github.com/achillium/vooperian-map/blob/main/detailed_vooperian_mapSCALED.jpg?raw=true" alt="map">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div></span>
+    
+    <script src="dist/wheel-zoom.js" type="text/javascript"></script>
+    
+    <script type="text/javascript">
+        document.addEventListener('DOMContentLoaded', function () {
+            var imageElement = document.getElementById('myContent').querySelector('img');
+    
+            if (imageElement.complete) {
+                init();
+            } else {
+                imageElement.onload = init;
+            }
+    
+            function init() {
+                var rangeElement = document.querySelector('[data-zoom-range]');
+    
+                var wzoom = WZoom.create('#myContent', {
+                    type: 'html',
+                    width: imageElement.naturalWidth,
+                    height: imageElement.naturalHeight,
+                    dragScrollableOptions: {
+                        onGrab: function () {
+                            document.getElementById('myWindow').style.cursor = 'grabbing';
+                        },
+                        onDrop: function () {
+                            document.getElementById('myWindow').style.cursor = 'grab';
+                        }
+                    },
+                    prepare: function () {
+                        setTimeout(() => {
+                            rangeElement.min = wzoom.content.minScale;
+                            rangeElement.defaultValue = wzoom.content.minScale;
+                            rangeElement.max = wzoom.content.maxScale;
+                            rangeElement.step = 1 / this.speed;
+                        }, 0);
+                    },
+                    rescale: function () {
+                        rangeElement.value = wzoom.content.currentScale;
+                    }
+                });
+    
+                document.querySelector('[data-zoom-up]').addEventListener('click', function () {
+                    wzoom.zoomUp();
+                });
+    
+                document.querySelector('[data-zoom-down]').addEventListener('click', function () {
+                    wzoom.zoomDown();
+                });
+    
+                window.addEventListener('resize', function () {
+                    wzoom.prepare();
+                });
+    
+                rangeElement.addEventListener('input', function () {
+                    let newScale = Number(rangeElement.value);
+    
+                    if (newScale > wzoom.content.currentScale) {
+                        wzoom.zoomUp();
+                    } else {
+                        wzoom.zoomDown();
+                    }
+                });
+            }
+        });
+    </script>
+    <p>Download or embed: <a href="https://github.com/achillium/vooperian-map" style="font-family:arial; color:#1e90ff;">https://github.com/achillium/vooperian-map</a></p>
+    </section>
+    
+    
+        
+    
+    </body><grammarly-desktop-integration data-grammarly-shadow-root="true"></grammarly-desktop-integration></html>
